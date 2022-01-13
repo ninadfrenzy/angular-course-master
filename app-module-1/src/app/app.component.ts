@@ -5,6 +5,17 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'app-module-1';
+export class AppComponent{
+  title = 'app-module-2';
+  fromChild!:string;
+  public constructor() {
+    console.log('Hello from AppComponent');
+  }
+
+  updateTitle() {
+    this.title='new title';
+  }
+  catchAndShow(data:any) {
+    this.fromChild = data;
+  }
 }

@@ -1,0 +1,13 @@
+
+<app-navbar></app-navbar>
+
+<section class="main section">
+  <div class="columns">
+    <div class="column is-6">
+      <app-product-list [products]="productList" (productIdEvt)="findProductById($event)"></app-product-list>
+    </div>
+    <div class="column is-6">
+      <app-product-view [selectedProduct]="selectedProduct"></app-product-view>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<div class="section">
+    <div class="if-operator" *ngIf="myCondition; else elsepart">
+        <p>Load this statement if the condition is true.</p>
+    </div>
+    <ng-template class="else" #elsepart>
+        <p>
+            load this statement if the condition is false.
+        </p>
+    </ng-template>
+</div>
+<div class="section">
+    <div class="for-operator">
+        <ul>
+            <li *ngFor="let item of listElements;">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+</div>
+<button class="button is-primary" (click)="changeCondition()">click me to toggle</button>
