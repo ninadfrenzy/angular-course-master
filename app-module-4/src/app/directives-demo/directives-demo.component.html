@@ -1,0 +1,26 @@
+<div class="section">
+    <div class="columns">
+        <div class="column" [appEvenOdd]=num *ngFor="let num of numbers">{{num}}</div>
+
+    </div>
+</div>
+<div class="section">
+    <div class="columns">
+        <div class="column is-6 is-offset-3" [ngSwitch]="favColor">
+
+            <div class="card" *ngSwitchCase="'red'">
+                <div class="card-header"><div class="card-header-title">RED is my favourite color</div></div>
+            </div>
+            <div class="card" *ngSwitchCase="'blue'">
+                <div class="card-header"><div class="card-header-title">BLUE is my favourite color</div></div>
+            </div>
+            <div class="card" *ngSwitchCase="'green'">
+                <div class="card-header"><div class="card-header-title">GREEN is my favourite color</div></div>
+            </div>
+            <div class="card" *ngSwitchCase="'yellow'">
+                <div class="card-header"><div class="card-header-title">YELLOW is my favourite color</div></div>
+            </div>
+        </div>
+
+    </div>
+</div>

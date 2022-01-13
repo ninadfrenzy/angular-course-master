@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
+import { ProductService } from 'src/app/services/product.service';
 import {productList, productDetails} from '../products';
 
 @Component({
@@ -8,20 +9,19 @@ import {productList, productDetails} from '../products';
   styleUrls: ['./product-page.component.css']
 })
 export class ProductPageComponent implements OnInit {
-  productList: Array<Product> = productList;
-  productDetails: Array<Product> = productDetails;
-  selectedProduct: Product = this.productDetails[0];
-  constructor() { }
+  productList: Array<Product> = [];
+  productDetails: Array<Product> = [];
+  selectedProduct: Product = {} as Product;
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-
+    this.productDetails = this.productService.productDetails;
+    this.productList = this.productService.productList;
+    this.selectedProduct = this.productDetails[0];
   }
 
   findProductById(productId: any) {
-    console.log(productId);
-    this.selectedProduct = this.productDetails.filter((product) => {
-      return product.id === productId;
-    })[0];
+    this.selectedProduct = this.productService.getProductById(productId);
   }
 
 

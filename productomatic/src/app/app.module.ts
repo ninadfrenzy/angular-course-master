@@ -7,6 +7,8 @@ import { ProductPageComponent } from './product-home/product-page/product-page.c
 import { ProductListComponent } from './product-home/product-list/product-list.component';
 import { ProductViewComponent } from './product-home/product-view/product-view.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { LoginPageComponent } from './login/login-page/login-page.component';
+import { SignupPageComponent } from './signup/signup-page/signup-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     ProductPageComponent,
     ProductListComponent,
     ProductViewComponent,
-    NavbarComponent
+    NavbarComponent,
+    LoginPageComponent,
+    SignupPageComponent
   ],
   imports: [
     BrowserModule,

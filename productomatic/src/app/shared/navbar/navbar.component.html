@@ -1,11 +1,36 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        NAV
-  
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+<nav class="navbar is-link" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <h2 class="is-size-3">PRODUCTOMATIC</h2>
+
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" routerLink="/product-home"> Product Home </a>
+
+      <a class="navbar-item"> About </a>
+
+
     </div>
-  </nav>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-primary" routerLink="/signup">
+            <strong>Sign up</strong>
+          </a>
+          <a class="button is-light" routerLink="/login"> Log in </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
