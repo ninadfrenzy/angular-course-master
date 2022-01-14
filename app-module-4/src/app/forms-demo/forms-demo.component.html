@@ -1,0 +1,77 @@
+<div class="section">
+    <div class="columns">
+        <div class="column is-8 is-offset-2">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-title">
+                        FORMS DEMO
+                    </div>
+                </div>
+                <div class="card-content">
+                    <form (ngSubmit)="onFormSubmit(formRef)" #formRef="ngForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input ngModel class="form-control input" type="text" name="name" required minlength="3"/>
+                            <p class="error-text" *ngIf="formRef.controls['name']?.errors?.['required']">Name Should not be empty</p>
+                            <p class="error-text" *ngIf="formRef.controls['name']?.errors?.['minlength']">Name Should not be less than 3 chars.</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input ngModel class="form-control input" type="number" name="age" min="4" max="120" required/>
+                            <p class="error-text" *ngIf="formRef.controls['age']?.errors?.['min']">Must be equal or greater than 4</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input ngModel class="form-control input" type="email" name="email"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">password</label>
+                            <input ngModel class="form-control input" type="password" name="password"/>
+                        </div>
+                        <button class="button is-link" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="columns">
+        <div class="column is-8 is-offset-2">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-header-title">
+                        FORMS DEMO
+                    </div>
+                </div>
+                <div class="card-content">
+                    <form [formGroup]="myForm" (ngSubmit)="onReactiveSubmit()">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input class="form-control input" type="text" name="name" required minlength="3" formControlName="name"/>
+                            <p class="error-text" *ngIf="myForm.get('name')?.hasError('required') && myForm.get('name')?.touched">Name Should not be empty</p>
+                            <p class="error-text" *ngIf="myForm.get('name')?.hasError('minlength')">Name Should not be less than 3 chars.</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <input class="form-control input" type="number" name="age" min="4" max="120" required formControlName="age"/>
+                            <p class="error-text" *ngIf="myForm.get('age')?.hasError('min')">Must be equal or greater than 4</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input class="form-control input" type="email" name="email" formControlName="email"/>
+                            <p class="error-text" *ngIf="myForm.get('email')?.hasError('pattern')">Must be valid email</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">password</label>
+                            <input class="form-control input" type="password" name="password" formControlName="password">
+                            <p class="error-text" *ngIf="myForm.get('password')?.hasError('required')">is required</p>
+                        </div>
+                        <button class="button is-link" type="submit" [disabled]="!myForm.valid">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

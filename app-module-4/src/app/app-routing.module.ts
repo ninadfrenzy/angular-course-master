@@ -5,6 +5,8 @@ import { ErrPageComponent } from './err-page/err-page.component';
 import { HomeComponent } from './home/home.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UsersComponent } from './users/users.component';
+import { FormsDemoComponent } from './forms-demo/forms-demo.component'
+import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 
 const routes: Routes = [
   {
@@ -17,7 +19,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: DirectivesDemoComponent
+    component: ObservableDemoComponent
   },
   {
     path: 'page-not-existing',

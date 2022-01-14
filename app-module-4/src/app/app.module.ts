@@ -9,6 +9,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { ErrPageComponent } from './err-page/err-page.component';
 import { DirectivesDemoComponent } from './directives-demo/directives-demo.component';
 import { EvenOddDirective } from './even-odd.directive';
+import { FormsDemoComponent } from './forms-demo/forms-demo.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,15 @@ import { EvenOddDirective } from './even-odd.directive';
     UserDetailComponent,
     ErrPageComponent,
     DirectivesDemoComponent,
-    EvenOddDirective
+    EvenOddDirective,
+    FormsDemoComponent,
+    ObservableDemoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
