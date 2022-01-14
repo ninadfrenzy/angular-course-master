@@ -9,6 +9,7 @@ import { ProductViewComponent } from './product-home/product-view/product-view.c
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { LoginPageComponent } from './login/login-page/login-page.component';
 import { SignupPageComponent } from './signup/signup-page/signup-page.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SignupPageComponent } from './signup/signup-page/signup-page.component'
     ProductViewComponent,
     NavbarComponent,
     LoginPageComponent,
-    SignupPageComponent
+    SignupPageComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

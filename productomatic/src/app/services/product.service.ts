@@ -11,7 +11,7 @@ export class ProductService {
       name: 'Handcrafted Metal Sausages',
       description:
         'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
-      price: '591.00',
+      price: 591.00,
       department: 'Electronics',
       id: '1',
     },
@@ -20,7 +20,7 @@ export class ProductService {
       name: 'Handcrafted Granite Shoes',
       description:
         'The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality',
-      price: '249.00',
+      price: 249.00,
       department: 'Home',
       id: '2',
     },
@@ -29,7 +29,7 @@ export class ProductService {
       name: 'Handcrafted Plastic Bike',
       description:
         'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
-      price: '843.00',
+      price: 843.00,
       department: 'Baby',
       id: '3',
     },
@@ -38,7 +38,7 @@ export class ProductService {
       name: 'Awesome Frozen Pants',
       description:
         'Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support',
-      price: '441.00',
+      price: 441.00,
       department: 'Computers',
       id: '4',
     },
@@ -47,7 +47,7 @@ export class ProductService {
       name: 'Tasty Plastic Computer',
       description:
         'Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support',
-      price: '542.00',
+      price: 542.00,
       department: 'Grocery',
       id: '5',
     },
@@ -56,7 +56,7 @@ export class ProductService {
       name: 'Incredible Plastic Car',
       description:
         'Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals',
-      price: '952.00',
+      price: 952.00,
       department: 'Baby',
       id: '6',
     },
@@ -65,7 +65,7 @@ export class ProductService {
       name: 'Handmade Metal Car',
       description:
         'The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients',
-      price: '561.00',
+      price: 561.00,
       department: 'Toys',
       id: '7',
     },
@@ -74,7 +74,7 @@ export class ProductService {
       name: 'Intelligent Concrete Bacon',
       description:
         'The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality',
-      price: '99.00',
+      price: 99.00,
       department: 'Electronics',
       id: '8',
     },
@@ -83,7 +83,7 @@ export class ProductService {
       name: 'Sleek Cotton Keyboard',
       description:
         'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
-      price: '77.00',
+      price: 77.00,
       department: 'Garden',
       id: '9',
     },
@@ -92,7 +92,7 @@ export class ProductService {
       name: 'Incredible Cotton Sausages',
       description:
         'New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart',
-      price: '127.00',
+      price: 127.00,
       department: 'Automotive',
       id: '10',
     }

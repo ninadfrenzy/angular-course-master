@@ -3,6 +3,6 @@ export interface Product{
     id: string;
     description?: string;
     createdAt?: string;
-    price?: string;
+    price?: number;
     department?: string; 
 }

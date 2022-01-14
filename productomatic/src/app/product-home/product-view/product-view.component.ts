@@ -7,7 +7,7 @@ import { Product } from 'src/app/models/product.model';
   styleUrls: ['./product-view.component.css']
 })
 export class ProductViewComponent implements OnInit {
-  @Input() selectedProduct!: Product;
+  @Input() selectedProduct: Product = {id: '', name: ''};
   constructor() { }
 
   ngOnInit(): void {
