@@ -8,9 +8,11 @@
                     </div>
                 </div>
                 <div class="card-content">
-                    <input class="input m-2" type="text" placeholder="username">
-                    <input class="input m-2" type="password" placeholder="test">
-                    <button class="button is-link m-2" (click)="login()">Login</button>
+                    <form (ngSubmit)="login(form)" #form="ngForm">
+                        <input class="input m-2" type="text" placeholder="email" ngModel name="email">
+                        <input class="input m-2" type="password" placeholder="test" ngModel name="password">
+                        <button class="button is-link m-2" type="submit">Login</button>
+                    </form>
                 </div>
             </div>
         </div>

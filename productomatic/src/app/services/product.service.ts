@@ -1,174 +1,46 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Product } from '../models/product.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-  productDetails: Array<Product> = [
-    {
-      createdAt: '2022-01-11T23:10:33.103Z',
-      name: 'Handcrafted Metal Sausages',
-      description:
-        'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
-      price: 591.00,
-      department: 'Electronics',
-      id: '1',
-    },
-    {
-      createdAt: '2022-01-11T19:42:17.179Z',
-      name: 'Handcrafted Granite Shoes',
-      description:
-        'The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality',
-      price: 249.00,
-      department: 'Home',
-      id: '2',
-    },
-    {
-      createdAt: '2022-01-11T18:33:21.572Z',
-      name: 'Handcrafted Plastic Bike',
-      description:
-        'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
-      price: 843.00,
-      department: 'Baby',
-      id: '3',
-    },
-    {
-      createdAt: '2022-01-11T15:32:30.966Z',
-      name: 'Awesome Frozen Pants',
-      description:
-        'Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support',
-      price: 441.00,
-      department: 'Computers',
-      id: '4',
-    },
-    {
-      createdAt: '2022-01-11T10:33:57.668Z',
-      name: 'Tasty Plastic Computer',
-      description:
-        'Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support',
-      price: 542.00,
-      department: 'Grocery',
-      id: '5',
-    },
-    {
-      createdAt: '2022-01-11T05:17:07.705Z',
-      name: 'Incredible Plastic Car',
-      description:
-        'Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals',
-      price: 952.00,
-      department: 'Baby',
-      id: '6',
-    },
-    {
-      createdAt: '2022-01-11T12:07:16.234Z',
-      name: 'Handmade Metal Car',
-      description:
-        'The beautiful range of Apple Naturalé that has an exciting mix of natural ingredients. With the Goodness of 100% Natural Ingredients',
-      price: 561.00,
-      department: 'Toys',
-      id: '7',
-    },
-    {
-      createdAt: '2022-01-11T23:20:43.414Z',
-      name: 'Intelligent Concrete Bacon',
-      description:
-        'The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality',
-      price: 99.00,
-      department: 'Electronics',
-      id: '8',
-    },
-    {
-      createdAt: '2022-01-11T08:54:00.582Z',
-      name: 'Sleek Cotton Keyboard',
-      description:
-        'The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J',
-      price: 77.00,
-      department: 'Garden',
-      id: '9',
-    },
-    {
-      createdAt: '2022-01-11T13:22:19.632Z',
-      name: 'Incredible Cotton Sausages',
-      description:
-        'New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart',
-      price: 127.00,
-      department: 'Automotive',
-      id: '10',
-    }
-  ];
-  productList: Array<Product> = [
-    {
-      name: 'Handcrafted Metal Sausages',
-      id: '1',
-    },
-    {
-      name: 'Handcrafted Granite Shoes',
-      id: '2',
-    },
-    {
-      name: 'Handcrafted Plastic Bike',
-      id: '3',
-    },
-    {
-      name: 'Awesome Frozen Pants',
-      id: '4',
-    },
-    {
-      name: 'Tasty Plastic Computer',
-      id: '5',
-    },
-    {
-      name: 'Incredible Plastic Car',
-      id: '6',
-    },
-    {
-      name: 'Handmade Metal Car',
-      id: '7',
-    },
-    {
-      name: 'Intelligent Concrete Bacon',
-      id: '8',
-    },
-    {
-      name: 'Sleek Cotton Keyboard',
-      id: '9',
-    },
-    {
-      name: 'Incredible Cotton Sausages',
-      id: '10',
-    },
-  ];
-  currentProduct: BehaviorSubject<Product> = new BehaviorSubject<Product>(this.productDetails[0]);
-  constructor() { }
 
-  addProduct(product: Product) {
-    this.productDetails.push(product);
-    this.productList.push({id: product.id, name: product.name});
+  currentProduct: BehaviorSubject<Product> = new BehaviorSubject<Product>({name: '', id: ''});
+  constructor(private httpClient: HttpClient) { }
+
+  // addProduct(product: Product) {
+  //   this.productDetails.push(product);
+  //   this.productList.push({id: product.id, name: product.name});
+  // }
+  // deleteProduct(product: Product) {
+  //   let index = this.getProductIndex(product.id);
+  //   this.productDetails = this.productDetails.splice(index, 1);
+  //   this.productList = this.productList.splice(index, 1);
+  // }
+  // updateProduct(product: Product) {
+  //   let index = this.getProductIndex(product.id);
+  //   this.productDetails[index] = product;
+  //   this.productList[index] = {id: product.id, name: product.name};
+  //   return product;
+  // }
+  getProductById(productId: string): Observable<Product> {
+    return this.httpClient.get<Product>('https://61de43e5f60e8f0017668c3c.mockapi.io/products/'+productId);
   }
-  deleteProduct(product: Product) {
-    let index = this.getProductIndex(product.id);
-    this.productDetails = this.productDetails.splice(index, 1);
-    this.productList = this.productList.splice(index, 1);
+  getProductList(): Observable<Product[]> {
+    return this.httpClient.get<Product[]>('https://61de43e5f60e8f0017668c3c.mockapi.io/products');
   }
-  updateProduct(product: Product) {
-    let index = this.getProductIndex(product.id);
-    this.productDetails[index] = product;
-    this.productList[index] = {id: product.id, name: product.name};
-    return product;
-  }
-  getProductById(productId: string) {
-    return this.productDetails.filter((item) => item.id === productId)[0];
-  }
-  getProductList() {
-    return this.productList;
-  }
-  getProductIndex(productId: string) {
-    return this.productDetails.map((item) => item.id).indexOf(productId);
-  }
+  // getProductIndex(productId: string) {
+  //   return this.productDetails.map((item) => item.id).indexOf(productId);
+  // }
   updateCurrentProduct(productId: string) {
-    let product = this.getProductById(productId);
-    this.currentProduct.next(product);
+    this.getProductById(productId).subscribe({
+      next: (product) => {
+        this.currentProduct.next(product);
+      }
+    })
+    
   }
 }

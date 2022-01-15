@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 import { InterceptService } from './intercept.service';
+import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
+import { CountOccPipe } from './count-occ.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { InterceptService } from './intercept.service';
     DirectivesDemoComponent,
     EvenOddDirective,
     FormsDemoComponent,
-    ObservableDemoComponent
+    ObservableDemoComponent,
+    PipeDemoComponent,
+    CountOccPipe
   ],
   imports: [
     BrowserModule,
