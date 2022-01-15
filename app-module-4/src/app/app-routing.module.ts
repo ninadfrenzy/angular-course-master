@@ -7,6 +7,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UsersComponent } from './users/users.component';
 import { FormsDemoComponent } from './forms-demo/forms-demo.component'
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
+import { HttpDemoComponent } from './http-demo/http-demo.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: ObservableDemoComponent
+    component: FormsDemoComponent
   },
   {
     path: 'page-not-existing',

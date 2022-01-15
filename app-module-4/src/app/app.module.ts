@@ -11,7 +11,9 @@ import { DirectivesDemoComponent } from './directives-demo/directives-demo.compo
 import { EvenOddDirective } from './even-odd.directive';
 import { FormsDemoComponent } from './forms-demo/forms-demo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
+import { InterceptService } from './intercept.service';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,14 @@ import { ObservableDemoComponent } from './observable-demo/observable-demo.compo
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

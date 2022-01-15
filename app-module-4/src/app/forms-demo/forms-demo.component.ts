@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-forms-demo',
@@ -8,7 +9,8 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 })
 export class FormsDemoComponent implements OnInit {
   myForm: FormGroup = new FormGroup({});
-  constructor() { }
+  posts: any;
+  constructor(private httpService: HttpService) { }
 
   ngOnInit(): void {
     this.myForm = new FormGroup({
@@ -16,10 +18,19 @@ export class FormsDemoComponent implements OnInit {
       'age': new FormControl('', [Validators.min(4)]),
       'email': new FormControl('', [Validators.pattern('[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}')]),
       'password': new FormControl('', [Validators.required])
+
     })
+    let req = this.httpService.getPosts();
+    req.subscribe({
+      next: (res) => {
+        this.posts=res;
+      }
+    })
+    
+    
   }
   onFormSubmit(ref: NgForm) {
-    console.log(ref);
+    this.httpService.sendPost(ref.value);
     
   }
   onReactiveSubmit() {

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Product } from '../models/product.model';
 
 @Injectable({
@@ -139,6 +140,7 @@ export class ProductService {
       id: '10',
     },
   ];
+  currentProduct: BehaviorSubject<Product> = new BehaviorSubject<Product>(this.productDetails[0]);
   constructor() { }
 
   addProduct(product: Product) {
@@ -164,5 +166,9 @@ export class ProductService {
   }
   getProductIndex(productId: string) {
     return this.productDetails.map((item) => item.id).indexOf(productId);
+  }
+  updateCurrentProduct(productId: string) {
+    let product = this.getProductById(productId);
+    this.currentProduct.next(product);
   }
 }
