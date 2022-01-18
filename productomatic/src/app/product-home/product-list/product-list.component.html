@@ -1,7 +1,8 @@
 <div class="product-list">
-    <div class="card" *ngFor="let product of products;" (click)="productOnClicked(product.id)" appHighlight>
+    <input type="text" class="input" [(ngModel)]="filterStr">
+    <div class="card" *ngFor="let product of products | autocomplete:filterStr;" (click)="productOnClicked(product.id)" appHighlight>
       <div class="card-header">
-        <p class="card-header-title">{{product.name}}</p>
+        <p class="card-header-title">{{product.name | uppercase}} -- <strong>{{product.id | tagcalc}}</strong></p>
       </div>
     </div>
 

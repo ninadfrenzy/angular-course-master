@@ -17,8 +17,7 @@ export class PipeDemoComponent implements OnInit {
   }
   currentDate = new Date();
   price: number = 500;
-  statuses: Array<string> = [
-    "FAILURE", "FAILURE", "FAILURE", "FAILURE", "SUCCESS", "SUCCESS","SUCCESS", "FAILURE","SUCCESS"  ];
+  birthDate: Date = new Date('12-01-1997')
   constructor() { }
 
   ngOnInit(): void {

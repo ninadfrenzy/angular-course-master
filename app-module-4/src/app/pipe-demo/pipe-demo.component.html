@@ -3,7 +3,8 @@
         <div class="column is-8 is-offset-2">
             <div class="card">
                 <div class="card-content">
-                    {{nameObs | async}}
+                    My Age is {{ birthDate | ageCalc}}
+                    <a routerLink="/feature" class="button is-link">Go to feature</a>
                 </div>
             </div>
         </div>

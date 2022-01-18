@@ -16,6 +16,11 @@ import { ObservableDemoComponent } from './observable-demo/observable-demo.compo
 import { InterceptService } from './intercept.service';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { CountOccPipe } from './count-occ.pipe';
+import { AgeCalcPipe } from './age-calc.pipe';
+import { Test1Module } from './test-1/test-1.module'
+import { Test2Module } from './test-2/test-2.module';
+import { FeatureModule } from './feature/feature.module';
+import { FeatureRoutingModule } from './feature/feature-routing.module';
 
 @NgModule({
   declarations: [
@@ -29,14 +34,19 @@ import { CountOccPipe } from './count-occ.pipe';
     FormsDemoComponent,
     ObservableDemoComponent,
     PipeDemoComponent,
-    CountOccPipe
+    CountOccPipe,
+    AgeCalcPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Test1Module,
+    Test2Module,
+    
+    
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

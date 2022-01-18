@@ -10,6 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductListComponent implements OnInit {
   @Input() products: Array<Product> = [];
   @Output() productIdEvt: EventEmitter<string> = new EventEmitter<string>();
+  filterStr: string = '';
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {

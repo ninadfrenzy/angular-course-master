@@ -9,6 +9,7 @@ import { FormsDemoComponent } from './forms-demo/forms-demo.component'
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 import { HttpDemoComponent } from './http-demo/http-demo.component';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
+import { FirstCompComponent } from './test-1/first-comp/first-comp.component';
 
 const routes: Routes = [
   {
@@ -29,9 +30,14 @@ const routes: Routes = [
     data: {"message": "Page was not found"}
   },
   {
-    path: '**',
-    redirectTo: 'page-not-existing'
+    path: 'module1',
+    component: FirstCompComponent
+  },
+  {
+    path: 'feature',
+    loadChildren: () => import('./feature/feature.module').then(m=>m.FeatureModule)
   }
+
 ];
 
 @NgModule({

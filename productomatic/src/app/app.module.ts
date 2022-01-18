@@ -13,6 +13,8 @@ import { HighlightDirective } from './highlight.directive';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptorService } from './interceptors/auth-interceptor.service';
+import { TagcalcPipe } from './tagcalc.pipe';
+import { AutocompletePipe } from './autocomplete.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { AuthInterceptorService } from './interceptors/auth-interceptor.service'
     NavbarComponent,
     LoginPageComponent,
     SignupPageComponent,
-    HighlightDirective
+    HighlightDirective,
+    TagcalcPipe,
+    AutocompletePipe
   ],
   imports: [
     BrowserModule,

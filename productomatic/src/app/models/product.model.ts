@@ -4,5 +4,5 @@ export interface Product{
     description?: string;
     createdAt?: string;
     price?: number;
-    department?: string; 
+    
 }
