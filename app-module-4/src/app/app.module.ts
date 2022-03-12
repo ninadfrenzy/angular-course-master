@@ -21,6 +21,8 @@ import { Test1Module } from './test-1/test-1.module'
 import { Test2Module } from './test-2/test-2.module';
 import { FeatureModule } from './feature/feature.module';
 import { FeatureRoutingModule } from './feature/feature-routing.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,12 @@ import { FeatureRoutingModule } from './feature/feature-routing.module';
     HttpClientModule,
     Test1Module,
     Test2Module,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
     
     
   ],

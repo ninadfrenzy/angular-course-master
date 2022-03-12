@@ -1,0 +1,36 @@
+<div class="section">
+    <div class="columns">
+        <div class="column is-8 is-offset-2">
+            <div class="card">
+                <div class="card-content">
+                    <select name="role" id="role" class="input" [(ngModel)]="userRole">
+                        <option value="teacher">Teacher</option>
+                        <option value="student">Student</option>
+                        <option value="default">Default</option>
+                    </select>
+                    <button class="button" (click)="loadProfile()">Load Profile</button>
+                    <button class="button" (click)="removeProfile()">Remove Profile</button>
+                    <div class="columns">
+                        <div class="column is-4 is-offset-4">
+                            <ng-template appLoader></ng-template>
+                        </div>
+                    </div>
+                    <!-- <div class="columns">
+                        <div class="column is-4 is-offset-4">
+                            <div>
+                                <app-student></app-student>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns">
+                        <div class="column is-4 is-offset-4">
+                            <div>
+                                <app-teacher></app-teacher>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

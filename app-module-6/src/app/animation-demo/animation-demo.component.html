@@ -1,0 +1,13 @@
+<div class="section">
+  <div class="columns">
+    <div class="column is-2 is-offset-5">
+      
+      <div
+      class="car"
+      [@screensaver]="state"
+      (@screensaver.done)="updateState($event)"
+      style="width: 30px; height: 30px; background-color: yellow; border-radius: 50%;"
+    ></div>
+    </div>
+  </div>
+</div>

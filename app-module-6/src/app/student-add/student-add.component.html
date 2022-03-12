@@ -1,0 +1,30 @@
+<div class="section">
+    <div class="columns">
+        <div class="column is-8 is-offset-2">
+            <pre>
+                {{stState | async | json}}
+            </pre>
+            <div class="card" *ngFor="let student of students | async">
+                <div class="card-header">
+                    <div class="card-header-title">
+                        {{student.id}}
+                    </div>
+                </div>
+                <div class="card-content">
+                    {{student.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columns">
+        <div class="column is-8 is-offset-2">
+            <div class="form">
+                <form>
+                    <input type="text" class="input" [(ngModel)]="name" name="name">
+                    <input type="text" class="input" [(ngModel)]="id" name="id">
+                    <button class="button" (click)="addStudent()">submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

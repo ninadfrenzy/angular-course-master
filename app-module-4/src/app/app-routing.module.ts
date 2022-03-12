@@ -22,7 +22,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: PipeDemoComponent
+    component: FormsDemoComponent
   },
   {
     path: 'page-not-existing',
